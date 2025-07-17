@@ -1,44 +1,42 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Book, Pencil, GraduationCap, FileText, Trophy, Star } from "lucide-react";
-import Link from "next/link";
+import { ClassCard } from "./class-card";
 
 const gradeData = [
   {
     icon: Book,
     grade: "Grade 6",
     description: "Foundation Grammar • Basic Writing • Reading Skills",
-    buttonVariant: "green",
+    buttonVariant: "green" as const,
   },
   {
     icon: Pencil,
     grade: "Grade 7",
     description: "Grammar Rules • Essay Writing • Comprehension",
-    buttonVariant: "orange",
+    buttonVariant: "orange" as const,
   },
   {
     icon: GraduationCap,
     grade: "Grade 8",
     description: "Advanced Grammar • Creative Writing • Literature",
-    buttonVariant: "green",
+    buttonVariant: "green" as const,
   },
   {
     icon: FileText,
     grade: "Grade 9",
     description: "O/L Preparation • Past Papers • Language Skills",
-    buttonVariant: "orange",
+    buttonVariant: "orange" as const,
   },
   {
     icon: Trophy,
     grade: "Grade 10",
     description: "O/L Focus • Exam Techniques • Literature Analysis",
-    buttonVariant: "green",
+    buttonVariant: "green" as const,
   },
   {
     icon: Star,
     grade: "Grade 11",
     description: "O/L Final Prep • Mock Exams • Intensive Practice",
-    buttonVariant: "orange",
+    buttonVariant: "orange" as const,
   },
 ];
 
@@ -55,23 +53,15 @@ export function ClassesSection() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {gradeData.map((grade, index) => {
-            const Icon = grade.icon;
-            return (
-              <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl">
-                <CardContent className="p-8 text-center flex flex-col items-center">
-                  <Icon className="w-8 h-8 mb-4 text-muted-foreground" />
-                  <h3 className="text-xl font-bold font-headline mb-3">{grade.grade}</h3>
-                  <p className="text-muted-foreground text-sm flex-grow min-h-[60px]">
-                    {grade.description}
-                  </p>
-                  <Button asChild variant="outline" size="lg" className={`rounded-full mt-4 ${grade.buttonVariant === 'green' ? 'bg-green-50 text-green-700 border-green-200 hover:bg-green-100' : 'bg-orange-50 text-orange-700 border-orange-200 hover:bg-orange-100'}`}>
-                    <Link href="/lessons">View Class Details</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            );
-          })}
+          {gradeData.map((grade, index) => (
+            <ClassCard
+              key={index}
+              icon={grade.icon}
+              grade={grade.grade}
+              description={grade.description}
+              buttonVariant={grade.buttonVariant}
+            />
+          ))}
         </div>
       </div>
     </section>
