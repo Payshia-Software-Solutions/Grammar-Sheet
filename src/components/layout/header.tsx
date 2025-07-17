@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/contact", label: "About" },
   { href: "/lessons", label: "Classes" },
   { href: "/quizzes", label: "Reviews" },
   { href: "/#news", label: "News" },
@@ -38,16 +39,13 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center mx-auto px-4 md:px-6 justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <FileText className="h-8 w-8 text-primary" />
+          <FileText className="h-8 w-8 text-green-600" />
           <span className="text-xl font-bold font-headline sm:inline-block text-foreground">Grammar Sheet</span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
           {navLinks.map((link) => (
             <NavLink key={link.href+link.label} {...link} />
           ))}
-           <Button asChild>
-              <Link href="/contact">Join a Class</Link>
-            </Button>
         </nav>
         <div className="flex items-center justify-end md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -60,16 +58,13 @@ export function Header() {
             <SheetContent side="left">
               <div className="flex flex-col gap-6 pt-6">
                 <Link href="/" className="flex items-center space-x-2 px-4">
-                    <FileText className="h-8 w-8 text-primary" />
+                    <FileText className="h-8 w-8 text-green-600" />
                     <span className="text-xl font-bold font-headline text-foreground">Grammar Sheet</span>
                 </Link>
                 <div className="flex flex-col gap-4 px-4">
                   {navLinks.map((link) => (
                       <NavLink key={link.href+link.label} {...link} className="text-lg"/>
                   ))}
-                   <Button asChild className="mt-4">
-                      <Link href="/contact">Join a Class</Link>
-                    </Button>
                 </div>
               </div>
             </SheetContent>
