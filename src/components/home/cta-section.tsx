@@ -5,7 +5,7 @@ export function CtaSection() {
   return (
     <section className="w-full py-16 md:py-24 bg-background">
       <div className="container px-4 md:px-6 mx-auto">
-        <div className="rounded-2xl bg-gradient-to-r from-blue-500 to-green-400 p-8 md:p-12 text-center text-white">
+        <div className="bg-gradient-to-r from-blue-500 to-green-400 p-8 md:p-12 text-center text-white">
           <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl mb-4">
             Have Questions? Get in Touch Today!
           </h2>
