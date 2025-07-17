@@ -1,5 +1,6 @@
 import { HeroHeaderSection } from "@/components/layout/hero-header-section";
 import { ChooseYourGradeSection } from "@/components/lessons/choose-your-grade-section";
+import { ClassDetailsSection } from "@/components/lessons/class-details-section";
 
 export default function LessonsPage() {
   return (
@@ -11,6 +12,7 @@ export default function LessonsPage() {
         imageHint="students learning"
       />
       <ChooseYourGradeSection />
+      <ClassDetailsSection />
     </div>
   );
 }
