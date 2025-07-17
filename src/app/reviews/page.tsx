@@ -1,4 +1,5 @@
 import { HeroHeaderSection } from "@/components/layout/hero-header-section";
+import { TopSuccessStories } from "@/components/reviews/top-success-stories";
 
 export default function ReviewsPage() {
   return (
@@ -9,6 +10,7 @@ export default function ReviewsPage() {
         imageUrl="https://placehold.co/1920x600.png"
         imageHint="students group photo"
       />
+      <TopSuccessStories />
     </div>
   );
 }
