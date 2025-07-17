@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ClassesSection } from "@/components/home/classes-section";
 import { WhyChooseUsSection } from "@/components/home/why-choose-us";
+import { TestimonialsSection } from "@/components/home/testimonials-section";
 
 export default function Home() {
   return (
@@ -71,6 +72,8 @@ export default function Home() {
       <ClassesSection />
 
       <WhyChooseUsSection />
+
+      <TestimonialsSection />
 
     </div>
   );
