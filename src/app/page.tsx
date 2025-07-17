@@ -2,26 +2,39 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { BookOpen, Target, FileQuestion } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
-      <section className="w-full py-20 md:py-32 bg-primary/10">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="space-y-4">
-              <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl text-gray-900 dark:text-gray-50">
-                Master English Grammar with <span className="text-primary">GrammarWise</span>
-              </h1>
-              <p className="max-w-[600px] text-gray-600 md:text-xl dark:text-gray-400">
-                Engaging lessons, interactive quizzes, and clear examples to help you conquer grammar and write with confidence.
-              </p>
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link href="/lessons">Start Learning Now</Link>
+      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white">
+        <Image
+          src="https://placehold.co/1920x1080.png"
+          alt="Students studying English"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+          data-ai-hint="students studying"
+        />
+        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="container relative z-20 px-4 md:px-6 mx-auto">
+          <div className="space-y-4 max-w-3xl mx-auto">
+            <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl">
+              Master English with Confidence
+            </h1>
+            <p className="text-lg md:text-xl">
+              From Grade 6 to
+            </p>
+            <p className="max-w-[600px] mx-auto text-gray-200 md:text-lg">
+              Trusted English classes tailored for Sri Lankan students.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button asChild size="lg">
+                <Link href="/lessons">Join a Class</Link>
               </Button>
-            </div>
-            <div className="flex justify-center">
-                <BookOpen className="w-48 h-48 text-primary" />
+               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Link href="/lessons">See Class Schedule</Link>
+              </Button>
             </div>
           </div>
         </div>

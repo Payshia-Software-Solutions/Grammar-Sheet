@@ -3,14 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { FileText, Menu, X } from "lucide-react";
+import { FileText, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/contact", label: "About" },
   { href: "/lessons", label: "Classes" },
   { href: "/quizzes", label: "Reviews" },
   { href: "/#news", label: "News" },
@@ -21,12 +20,13 @@ export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const NavLink = ({ href, label }: { href: string; label: string }) => (
+  const NavLink = ({ href, label, className }: { href: string; label: string, className?: string }) => (
     <Link
       href={href}
       className={cn(
         "transition-colors hover:text-primary",
-        pathname === href ? "text-primary font-semibold" : "text-muted-foreground"
+        pathname === href ? "text-primary font-semibold" : "text-muted-foreground",
+        className
       )}
       onClick={() => setIsMobileMenuOpen(false)}
     >
@@ -45,6 +45,9 @@ export function Header() {
           {navLinks.map((link) => (
             <NavLink key={link.href+link.label} {...link} />
           ))}
+           <Button asChild>
+              <Link href="/contact">Join a Class</Link>
+            </Button>
         </nav>
         <div className="flex items-center justify-end md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -60,10 +63,13 @@ export function Header() {
                     <FileText className="h-8 w-8 text-primary" />
                     <span className="text-xl font-bold font-headline text-foreground">Grammar Sheet</span>
                 </Link>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 px-4">
                   {navLinks.map((link) => (
-                      <NavLink key={link.href+link.label} {...link} />
+                      <NavLink key={link.href+link.label} {...link} className="text-lg"/>
                   ))}
+                   <Button asChild className="mt-4">
+                      <Link href="/contact">Join a Class</Link>
+                    </Button>
                 </div>
               </div>
             </SheetContent>
