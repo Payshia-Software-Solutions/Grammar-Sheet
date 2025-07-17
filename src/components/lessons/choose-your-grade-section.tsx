@@ -60,27 +60,27 @@ const gradeData = [
 const colorClasses = {
   green: {
     circle: "bg-green-500",
-    button: "bg-green-500 hover:bg-green-600",
+    button: "bg-green-500 hover:bg-green-600 text-white",
   },
   blue: {
     circle: "bg-blue-600",
-    button: "bg-blue-600 hover:bg-blue-700",
+    button: "bg-blue-600 hover:bg-blue-700 text-white",
   },
   orange: {
     circle: "bg-orange-500",
-    button: "bg-orange-500 hover:bg-orange-600",
+    button: "bg-orange-500 hover:bg-orange-600 text-white",
   },
   purple: {
     circle: "bg-purple-600",
-    button: "bg-purple-600 hover:bg-purple-700",
+    button: "bg-purple-600 hover:bg-purple-700 text-white",
   },
   red: {
     circle: "bg-red-600",
-    button: "bg-red-600 hover:bg-red-700",
+    button: "bg-red-600 hover:bg-red-700 text-white",
   },
   indigo: {
     circle: "bg-indigo-600",
-    button: "bg-indigo-600 hover:bg-indigo-700",
+    button: "bg-indigo-600 hover:bg-indigo-700 text-white",
   },
 };
 
@@ -93,22 +93,22 @@ export function ChooseYourGradeSection() {
             Choose Your Grade
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {gradeData.map((item) => {
             const colors = colorClasses[item.color as keyof typeof colorClasses];
             return (
               <Card key={item.grade} className="shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl flex flex-col bg-card">
-                <CardContent className="p-6 flex flex-col h-full">
+                <CardContent className="p-8 flex flex-col h-full">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className={cn("w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg", colors.circle)}>
+                    <div className={cn("w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0", colors.circle)}>
                       {item.grade}
                     </div>
-                    <h3 className="text-lg font-bold font-headline flex-1">{item.title}</h3>
+                    <h3 className="text-xl font-bold font-headline flex-1 text-left">{item.title.split(' - ')[1]}</h3>
                   </div>
                   <p className="text-muted-foreground text-sm mb-6 flex-grow min-h-[60px]">
                     {item.description}
                   </p>
-                  <div className="flex items-center text-muted-foreground text-sm gap-4 mb-6">
+                  <div className="space-y-3 text-muted-foreground text-sm mb-6">
                       <div className="flex items-center gap-2">
                         <Monitor className="w-4 h-4" />
                         <span>{item.type}</span>
