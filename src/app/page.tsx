@@ -29,10 +29,10 @@ export default function Home() {
               Trusted English classes tailored for Sri Lankan students.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="rounded-full">
                 <Link href="/lessons">Join a Class</Link>
               </Button>
-               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
                 <Link href="/lessons">See Class Schedule</Link>
               </Button>
             </div>
