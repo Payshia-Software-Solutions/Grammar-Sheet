@@ -1,5 +1,14 @@
+
+"use client"
+
+import * as React from "react"
 import { Book, Pencil, GraduationCap, FileText, Trophy, Star } from "lucide-react";
 import { ClassCard } from "./class-card";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+} from "@/components/ui/carousel"
 
 const gradeData = [
   {
@@ -52,7 +61,35 @@ export function ClassesSection() {
             Choose the perfect class for your grade level
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        
+        {/* Carousel for mobile */}
+        <div className="sm:hidden">
+            <Carousel
+                opts={{
+                    align: "start",
+                    loop: true,
+                }}
+                className="w-full"
+            >
+                <CarouselContent>
+                    {gradeData.map((grade, index) => (
+                        <CarouselItem key={index} className="basis-3/4">
+                            <div className="p-1 h-full">
+                                <ClassCard
+                                    icon={grade.icon}
+                                    grade={grade.grade}
+                                    description={grade.description}
+                                    buttonVariant={grade.buttonVariant}
+                                />
+                            </div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+            </Carousel>
+        </div>
+
+        {/* Grid for tablet and desktop */}
+        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {gradeData.map((grade, index) => (
             <ClassCard
               key={index}
