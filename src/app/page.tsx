@@ -1,3 +1,4 @@
+
 "use client"
 
 import { Button } from "@/components/ui/button";
@@ -15,17 +16,6 @@ export default function Home() {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
-
-  const MotionSection = ({ children }: { children: React.ReactNode }) => (
-    <motion.section
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={sectionVariants}
-    >
-      {children}
-    </motion.section>
-  );
 
   return (
     <div className="flex flex-col items-center">
@@ -67,7 +57,13 @@ export default function Home() {
         </div>
       </section>
 
-      <MotionSection>
+      <motion.div
+        className="w-full"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <section className="w-full py-16 md:py-24 bg-secondary">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="bg-card rounded-2xl shadow-xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
@@ -93,27 +89,57 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </MotionSection>
+      </motion.div>
 
-      <MotionSection>
+      <motion.div
+        className="w-full"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <ClassesSection />
-      </MotionSection>
+      </motion.div>
       
-      <MotionSection>
+      <motion.div
+        className="w-full"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <WhyChooseUsSection />
-      </MotionSection>
+      </motion.div>
 
-      <MotionSection>
+      <motion.div
+        className="w-full"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <TestimonialsSection />
-      </MotionSection>
+      </motion.div>
 
-      <MotionSection>
+      <motion.div
+        className="w-full"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <NewsSection />
-      </MotionSection>
+      </motion.div>
 
-      <MotionSection>
+      <motion.div
+        className="w-full"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <CtaSection />
-      </MotionSection>
+      </motion.div>
 
     </div>
   );
