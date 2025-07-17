@@ -1,6 +1,6 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { BookOpen, Target, FileQuestion } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { WhyChooseUsSection } from "@/components/home/why-choose-us";
@@ -8,8 +8,25 @@ import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { NewsSection } from "@/components/home/news-section";
 import { CtaSection } from "@/components/home/cta-section";
 import { ClassesSection } from "@/components/home/classes-section";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
+  const MotionSection = ({ children }: { children: React.ReactNode }) => (
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={sectionVariants}
+    >
+      {children}
+    </motion.section>
+  );
+
   return (
     <div className="flex flex-col items-center">
       <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white">
@@ -23,7 +40,12 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="container relative z-20 px-4 md:px-6 mx-auto">
-          <div className="space-y-4 max-w-3xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-4 max-w-3xl mx-auto"
+          >
             <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl">
               Master English with Confidence
             </h1>
@@ -41,45 +63,57 @@ export default function Home() {
                 <Link href="/contact">See Class Schedule</Link>
               </Button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="w-full py-16 md:py-24 bg-secondary">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="bg-card rounded-2xl shadow-xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-shrink-0">
-              <Image
-                src="https://placehold.co/160x160.png"
-                alt="Teacher"
-                width={160}
-                height={160}
-                className="rounded-full object-cover"
-                data-ai-hint="teacher person"
-              />
-            </div>
-            <div className="space-y-4 text-center md:text-left">
-              <h2 className="text-3xl font-headline font-bold">About Your Teacher</h2>
-              <p className="text-muted-foreground">
-                10+ years of experience in teaching English for O/L and Junior Grades. Passionate about helping Sri Lankan students excel in English with personalized attention and proven methods.
-              </p>
-              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full" size="lg">
-                <Link href="/contact">Learn More</Link>
-              </Button>
+      <MotionSection>
+        <section className="w-full py-16 md:py-24 bg-secondary">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="bg-card rounded-2xl shadow-xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+              <div className="flex-shrink-0">
+                <Image
+                  src="https://placehold.co/160x160.png"
+                  alt="Teacher"
+                  width={160}
+                  height={160}
+                  className="rounded-full object-cover"
+                  data-ai-hint="teacher person"
+                />
+              </div>
+              <div className="space-y-4 text-center md:text-left">
+                <h2 className="text-3xl font-headline font-bold">About Your Teacher</h2>
+                <p className="text-muted-foreground">
+                  10+ years of experience in teaching English for O/L and Junior Grades. Passionate about helping Sri Lankan students excel in English with personalized attention and proven methods.
+                </p>
+                <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full" size="lg">
+                  <Link href="/contact">Learn More</Link>
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </MotionSection>
 
-      <ClassesSection />
+      <MotionSection>
+        <ClassesSection />
+      </MotionSection>
+      
+      <MotionSection>
+        <WhyChooseUsSection />
+      </MotionSection>
 
-      <WhyChooseUsSection />
+      <MotionSection>
+        <TestimonialsSection />
+      </MotionSection>
 
-      <TestimonialsSection />
+      <MotionSection>
+        <NewsSection />
+      </MotionSection>
 
-      <NewsSection />
-
-      <CtaSection />
+      <MotionSection>
+        <CtaSection />
+      </MotionSection>
 
     </div>
   );
