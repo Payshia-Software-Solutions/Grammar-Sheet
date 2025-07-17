@@ -42,15 +42,17 @@ export function NewsSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
                     {newsData.map((newsItem, index) => (
-                        <Card key={index} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl">
-                            <Image
-                                src={newsItem.imageSrc}
-                                alt={newsItem.imageAlt}
-                                width={600}
-                                height={400}
-                                className="w-full h-48 object-cover"
-                                data-ai-hint={newsItem.imageHint}
-                            />
+                        <Card key={index} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl group">
+                            <div className="overflow-hidden">
+                                <Image
+                                    src={newsItem.imageSrc}
+                                    alt={newsItem.imageAlt}
+                                    width={600}
+                                    height={400}
+                                    className="w-full h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                    data-ai-hint={newsItem.imageHint}
+                                />
+                            </div>
                             <CardContent className="p-6">
                                 <h3 className="text-lg font-bold font-headline mb-2">{newsItem.title}</h3>
                                 <p className="text-muted-foreground text-sm mb-4">{newsItem.description}</p>
