@@ -23,7 +23,7 @@ export default function Home() {
               Master English with Confidence
             </h1>
             <p className="text-lg md:text-xl">
-              From Grade 6 to
+              From Grade 6 to O/L
             </p>
             <p className="max-w-[600px] mx-auto text-gray-200 md:text-lg">
               Trusted English classes tailored for Sri Lankan students.
@@ -33,7 +33,33 @@ export default function Home() {
                 <Link href="/lessons">Join a Class</Link>
               </Button>
                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
-                <Link href="/lessons">See Class Schedule</Link>
+                <Link href="/contact">See Class Schedule</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full py-16 md:py-24 bg-secondary">
+        <div className="container px-4 md:px-6 mx-auto">
+          <div className="bg-card rounded-2xl shadow-xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-shrink-0">
+              <Image
+                src="https://placehold.co/160x160.png"
+                alt="Teacher"
+                width={160}
+                height={160}
+                className="rounded-full object-cover"
+                data-ai-hint="teacher person"
+              />
+            </div>
+            <div className="space-y-4 text-center md:text-left">
+              <h2 className="text-3xl font-headline font-bold">About Your Teacher</h2>
+              <p className="text-muted-foreground">
+                10+ years of experience in teaching English for O/L and Junior Grades. Passionate about helping Sri Lankan students excel in English with personalized attention and proven methods.
+              </p>
+              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full" size="lg">
+                <Link href="/contact">Learn More</Link>
               </Button>
             </div>
           </div>
