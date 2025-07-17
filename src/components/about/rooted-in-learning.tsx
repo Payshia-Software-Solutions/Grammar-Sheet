@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { MapPin, Heart } from "lucide-react";
+import { useContext } from "react";
+import { LanguageContext } from "../layout/language-toggle";
 
-const features = [
+const featuresEn = [
   {
     icon: MapPin,
     title: "Sri Lankan Syllabus Focused",
@@ -18,21 +22,54 @@ const features = [
   },
 ];
 
+const featuresSi = [
+  {
+    icon: MapPin,
+    title: "ශ්‍රී ලංකා විෂය නිර්දේශය කේන්ද්‍ර කරගත්",
+    description: "සෑම පාඩමක්ම දේශීය විෂය මාලාවට සහ විභාග අවශ්‍යතාවලට මනාව ගැලපේ.",
+    iconBgColor: "bg-blue-100",
+    iconTextColor: "text-blue-600",
+  },
+  {
+    icon: Heart,
+    title: "සංස්කෘතිකව අදාළ උදාහරණ",
+    description: "ශ්‍රී ලාංකික සංස්කෘතිය සහ දෛනික ජීවිතය සමඟ අනුනාද වන උදාහරණ හරහා ඉංග්‍රීසි ඉගෙන ගන්න.",
+    iconBgColor: "bg-green-100",
+    iconTextColor: "text-green-600",
+  },
+];
+
+const translations = {
+    en: {
+        title: "Rooted in Local Learning",
+        subtitle: "Understanding our culture, enhancing your English",
+        features: featuresEn
+    },
+    si: {
+        title: "දේශීය ඉගෙනුම තුළ මුල් බැස ඇත",
+        subtitle: "අපේ සංස්කෘතිය තේරුම් ගනිමින්, ඔබේ ඉංග්‍රීසි වැඩි දියුණු කරමින්",
+        features: featuresSi
+    }
+}
+
 export function RootedInLearning() {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language as keyof typeof translations] || translations.en;
+
   return (
     <section className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">
-            Rooted in Local Learning
+            {t.title}
           </h2>
           <p className="max-w-[900px] mx-auto text-muted-foreground md:text-lg mt-4">
-            Understanding our culture, enhancing your English
+            {t.subtitle}
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="space-y-8">
-            {features.map((feature, index) => {
+            {t.features.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <div key={index} className="flex items-start gap-6">
