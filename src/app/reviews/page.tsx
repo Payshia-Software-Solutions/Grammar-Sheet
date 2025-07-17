@@ -1,5 +1,6 @@
 import { HeroHeaderSection } from "@/components/layout/hero-header-section";
 import { TopSuccessStories } from "@/components/reviews/top-success-stories";
+import { StudentVideos } from "@/components/reviews/student-videos";
 
 export default function ReviewsPage() {
   return (
@@ -11,6 +12,7 @@ export default function ReviewsPage() {
         imageHint="students group photo"
       />
       <TopSuccessStories />
+      <StudentVideos />
     </div>
   );
 }
