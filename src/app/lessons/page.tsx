@@ -3,6 +3,7 @@ import { ChooseYourGradeSection } from "@/components/lessons/choose-your-grade-s
 import { ClassDetailsSection } from "@/components/lessons/class-details-section";
 import { StudentAchievementsSection } from "@/components/lessons/student-achievements-section";
 import { WhyChooseClassesSection } from "@/components/lessons/why-choose-classes-section";
+import { LessonsCtaSection } from "@/components/lessons/lessons-cta-section";
 
 export default function LessonsPage() {
   return (
@@ -17,6 +18,7 @@ export default function LessonsPage() {
       <ClassDetailsSection />
       <WhyChooseClassesSection />
       <StudentAchievementsSection />
+      <LessonsCtaSection />
     </div>
   );
 }
