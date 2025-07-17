@@ -83,7 +83,7 @@ export function AllTestimonials() {
   );
 
   return (
-    <section className="w-full py-16 md:py-24 bg-gray-50">
+    <section className="w-full py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">
@@ -128,7 +128,7 @@ export function AllTestimonials() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {currentTestimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-white shadow-lg rounded-xl p-6 flex flex-col">
+            <Card key={index} className="bg-card shadow-lg rounded-xl p-6 flex flex-col">
               <CardContent className="flex flex-col gap-4 p-0 flex-grow">
                 <div className="flex items-center gap-4">
                   <Avatar>
