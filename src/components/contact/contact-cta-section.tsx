@@ -8,13 +8,13 @@ import { LanguageContext } from "../layout/language-toggle";
 
 const translations = {
   en: {
-    followTitle: "Follow Grammar Sheet for updates and tips!",
+    followTitle: "Follow Grammar Seed for updates and tips!",
     ctaTitle: "Ready to join a class or ask a question?",
     viewDetails: "View Class Details",
     startWhatsApp: "Start on WhatsApp"
   },
   si: {
-    followTitle: "යාවත්කාලීන කිරීම් සහ උපදෙස් සඳහා Grammar Sheet අනුගමනය කරන්න!",
+    followTitle: "යාවත්කාලීන කිරීම් සහ උපදෙස් සඳහා Grammar Seed අනුගමනය කරන්න!",
     ctaTitle: "පන්තියකට සම්බන්ධ වීමට හෝ ප්‍රශ්නයක් ඇසීමට සූදානම්ද?",
     viewDetails: "පන්ති විස්තර බලන්න",
     startWhatsApp: "WhatsApp මත ආරම්භ කරන්න"

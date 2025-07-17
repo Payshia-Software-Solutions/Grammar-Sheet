@@ -21,7 +21,7 @@ const translations = {
       trial: "Trial Classes"
     },
     contact: "Contact",
-    copyright: "Grammar Sheet. All rights reserved.",
+    copyright: "Grammar Seed. All rights reserved.",
   },
   si: {
     slogan: "ශ්‍රී ලාංකික සිසුන් සඳහා ඉංග්‍රීසි අධ්‍යාපනයේ විශිෂ්ටත්වය",
@@ -38,7 +38,7 @@ const translations = {
       trial: "ආදර්ශ පන්ති"
     },
     contact: "සම්බන්ධ වන්න",
-    copyright: "Grammar Sheet. සියලුම හිමිකම් ඇවිරිණි.",
+    copyright: "Grammar Seed. සියලුම හිමිකම් ඇවිරිණි.",
   }
 };
 
@@ -54,7 +54,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
               <FileText className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold font-headline text-white">Grammar Sheet</span>
+              <span className="text-xl font-bold font-headline text-white">Grammar Seed</span>
             </Link>
             <p className="text-gray-400">
               {t.slogan}

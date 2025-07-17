@@ -6,7 +6,7 @@ import { LanguageContext } from "../layout/language-toggle";
 
 const translations = {
   en: {
-    title: "Why Choose Grammar Sheet?",
+    title: "Why Choose Grammar Seed?",
     features: [
       { icon: Users, title: "Personalized Attention", description: "Small class sizes ensure individual focus", iconBgColor: "bg-green-100 dark:bg-green-900/50", iconTextColor: "text-green-600 dark:text-green-400" },
       { icon: LineChart, title: "Proven Results", description: "95% of students improve their grades", iconBgColor: "bg-orange-100 dark:bg-orange-900/50", iconTextColor: "text-orange-500 dark:text-orange-400" },
@@ -15,7 +15,7 @@ const translations = {
     ]
   },
   si: {
-    title: "Grammar Sheet තෝරා ගන්නේ ඇයි?",
+    title: "Grammar Seed තෝරා ගන්නේ ඇයි?",
     features: [
       { icon: Users, title: "පුද්ගලික අවධානය", description: "කුඩා පන්ති නිසා තනි තනිව අවධානය", iconBgColor: "bg-green-100 dark:bg-green-900/50", iconTextColor: "text-green-600 dark:text-green-400" },
       { icon: LineChart, title: "ඔප්පු කළ ප්‍රතිඵල", description: "95% සිසුන්ගේ ලකුණු වැඩි දියුණු වේ", iconBgColor: "bg-orange-100 dark:bg-orange-900/50", iconTextColor: "text-orange-500 dark:text-orange-400" },

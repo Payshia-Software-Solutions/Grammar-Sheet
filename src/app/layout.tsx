@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { LanguageProvider } from '@/components/layout/language-toggle';
 
 export const metadata: Metadata = {
-  title: 'Grammar Sheet',
+  title: 'Grammar Seed',
   description: 'Your guide to mastering English grammar.',
 };
 

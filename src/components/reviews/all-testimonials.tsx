@@ -56,7 +56,7 @@ const testimonialsEn = [
   {
     name: "Mr. Rajapaksha",
     role: "Parent",
-    quote: "Excellent value for money. My son's school marks improved significantly after joining Grammar Sheet.",
+    quote: "Excellent value for money. My son's school marks improved significantly after joining Grammar Seed.",
     rating: 5,
     avatarSrc: "https://images.unsplash.com/photo-1549231567-950cb741e796?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwYXJlbnQlMjBtYW58ZW58MHx8fHwxNzUyNzc3MTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
     avatarFallback: "R",
@@ -113,9 +113,9 @@ const testimonialsSi = [
   {
     name: "රාජපක්ෂ මහතා",
     role: "දෙමාපිය",
-    quote: "මුදලට විශිෂ්ට වටිනාකමක්. Grammar Sheet හා සම්බන්ධ වීමෙන් පසු මගේ පුතාගේ පාසල් ලකුණු සැලකිය යුතු ලෙස වැඩිදියුණු විය.",
+    quote: "මුදලට විශිෂ්ට වටිනාකමක්. Grammar Seed හා සම්බන්ධ වීමෙන් පසු මගේ පුතාගේ පාසල් ලකුණු සැලකිය යුතු ලෙස වැඩිදියුණු විය.",
     rating: 5,
-    avatarSrc: "https://images.unsplash.com/photo-1549231567-950cb741e796?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwYXJlbnQlMjBtYW58ZW58MHx8fHwxNzUyNzc3MTExfDA&ixlib-rb-4.1.0&q=80&w=1080",
+    avatarSrc: "https://images.unsplash.com/photo-1549231567-950cb741e796?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwYXJlbnQlMjBtYW58ZW58MHx8fHwxNzUyNzc3MTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
     avatarFallback: "R",
     avatarHint: "parent man",
   },

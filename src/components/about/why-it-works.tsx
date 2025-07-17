@@ -128,12 +128,12 @@ const testimonialsSi = [
 
 const translations = {
   en: {
-    title: "Why Grammar Sheet Works",
+    title: "Why Grammar Seed Works",
     stats: statsEn,
     testimonials: testimonialsEn,
   },
   si: {
-    title: "Grammar Sheet ක්‍රියාත්මක වන්නේ ඇයි",
+    title: "Grammar Seed ක්‍රියාත්මක වන්නේ ඇයි",
     stats: statsSi,
     testimonials: testimonialsSi,
   }

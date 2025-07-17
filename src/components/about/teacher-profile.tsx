@@ -7,7 +7,7 @@ import { LanguageContext } from "../layout/language-toggle";
 
 const translations = {
   en: {
-    title: "Who's Behind Grammar Sheet?",
+    title: "Who's Behind Grammar Seed?",
     name: "Mr. Saman Silva",
     qualification: "B.A. in English Literature | TESL Certified",
     experience: "Over 10 years of helping students from Grade 6 to 11 succeed in English",
@@ -16,7 +16,7 @@ const translations = {
     successRate: "95% Success Rate"
   },
   si: {
-    title: "Grammar Sheet පිටුපස සිටින්නේ කවුද?",
+    title: "Grammar Seed පිටුපස සිටින්නේ කවුද?",
     name: "සමන් සිල්වා මහතා",
     qualification: "ඉංග්‍රීසි සාහිත්‍යය පිළිබඳ B.A. | TESL සහතික ලත්",
     experience: "6 ශ්‍රේණියේ සිට 11 ශ්‍රේණිය දක්වා සිසුන්ට ඉංග්‍රීසි සාර්ථක කර ගැනීමට වසර 10කට වැඩි කාලයක් උපකාර කර ඇත",
