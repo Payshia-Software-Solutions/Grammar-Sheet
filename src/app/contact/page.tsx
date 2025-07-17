@@ -25,7 +25,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="relative -mt-24 z-20">
+      <section className="relative -mt-32 z-20">
         <ContactCards />
       </section>
       

@@ -15,11 +15,13 @@ export function ContactCards() {
             <div className="w-16 h-16 mb-6 rounded-full flex items-center justify-center bg-green-100 flex-shrink-0">
                 <Phone className="w-8 h-8 text-green-600" />
             </div>
+            <div className="flex flex-col items-center justify-center">
             <h3 className="text-xl font-bold font-headline mb-2 text-foreground">Phone / WhatsApp</h3>
             <p className="text-muted-foreground mb-6">Call or Message: +94 7XX XXX XXX</p>
             <Button asChild className="bg-green-500 hover:bg-green-600 text-white rounded-lg w-full mt-auto">
               <Link href="#">Message on WhatsApp</Link>
             </Button>
+            </div>
           </CardContent>
         </Card>
 
@@ -29,11 +31,12 @@ export function ContactCards() {
             <div className="w-16 h-16 mb-6 rounded-full flex items-center justify-center bg-blue-100 flex-shrink-0">
                 <Mail className="w-8 h-8 text-blue-600" />
             </div>
-            <h3 className="text-xl font-bold font-headline mb-2 text-foreground">Email</h3>
+            <div className="flex flex-col items-center justify-center">
+              <h3 className="text-xl font-bold font-headline mb-2 text-foreground">Email</h3>
             <p className="text-muted-foreground mb-6">grammarsheet@gmail.com</p>
             <Button asChild className="bg-blue-500 hover:bg-blue-600 text-white rounded-lg w-full mt-auto">
               <Link href="mailto:grammarsheet@gmail.com">Send Email</Link>
-            </Button>
+            </Button></div>
           </CardContent>
         </Card>
 

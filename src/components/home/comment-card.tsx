@@ -13,8 +13,8 @@ export type CommentCardProps = {
 
 export function CommentCard({ name, role, avatarSrc, avatarFallback, avatarHint, quote }: CommentCardProps) {
     return (
-        <Card className="bg-white shadow-lg rounded-xl p-6">
-            <CardContent className="flex flex-col gap-4 p-0">
+        <Card className="bg-white shadow-lg rounded-xl p-6 h-full">
+            <CardContent className="flex flex-col gap-4 p-0 h-full">
                 <div className="flex items-center gap-4">
                     <Avatar>
                         <AvatarImage src={avatarSrc} alt={name} data-ai-hint={avatarHint} />
@@ -30,8 +30,8 @@ export function CommentCard({ name, role, avatarSrc, avatarFallback, avatarHint,
                         <Star key={i} className="w-5 h-5 text-orange-400 fill-orange-400" />
                     ))}
                 </div>
-                <blockquote className="text-muted-foreground italic">
-                    "{quote}"
+                <blockquote className="text-muted-foreground italic flex-grow">
+                    &quot;{quote}&quot;
                 </blockquote>
             </CardContent>
         </Card>
