@@ -5,7 +5,7 @@ import { ContactFormSection } from "@/components/contact/contact-form-section";
 export default function ContactPage() {
   return (
     <div>
-      <section className="relative w-full pt-20 pb-12 md:pt-32 md:pb-24 bg-gray-100">
+      <section className="relative w-full py-32 md:py-48 bg-gray-100">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('https://placehold.co/1920x800.png')" }}
