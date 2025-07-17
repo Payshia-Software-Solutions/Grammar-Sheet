@@ -33,10 +33,10 @@ import {
             <Accordion type="single" collapsible className="w-full space-y-4">
               {faqItems.map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="bg-white p-4 rounded-lg shadow-sm border-none">
-                  <AccordionTrigger className="font-semibold text-lg hover:no-underline">
+                  <AccordionTrigger className="font-semibold text-lg hover:no-underline text-left">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pt-2">
+                  <AccordionContent className="text-muted-foreground pt-2 text-left">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
