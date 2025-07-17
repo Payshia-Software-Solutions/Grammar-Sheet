@@ -1,6 +1,7 @@
 import { HeroHeaderSection } from "@/components/layout/hero-header-section";
 import { TopSuccessStories } from "@/components/reviews/top-success-stories";
 import { StudentVideos } from "@/components/reviews/student-videos";
+import { AllTestimonials } from "@/components/reviews/all-testimonials";
 
 export default function ReviewsPage() {
   return (
@@ -13,6 +14,7 @@ export default function ReviewsPage() {
       />
       <TopSuccessStories />
       <StudentVideos />
+      <AllTestimonials />
     </div>
   );
 }
