@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const newsData = [
     {
-        imageSrc: "https://placehold.co/600x400.png",
+        imageSrc: "https://images.unsplash.com/photo-1749068146084-6ca014673056?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2xhc3Nyb29tJTIwbm90aWNlJTIwYm9hcmR8ZW58MHx8fHwxNzUyNzc2NDM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
         imageAlt: "A classroom notice board with announcements.",
         imageHint: "classroom notice board",
         title: "New Batch Starting February 2024",
@@ -13,7 +13,7 @@ const newsData = [
         date: "Jan 15, 2024"
     },
     {
-        imageSrc: "https://placehold.co/600x400.png",
+        imageSrc: "https://images.unsplash.com/photo-1741699428083-ddb73b95d1b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxlZHVjYXRpb24lMjBleGFtfGVufDB8fHx8fDE3NTI3NzY0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
         imageAlt: "Graphic with text O Level",
         imageHint: "education exam",
         title: "O/L Exam Tips Released",
@@ -21,7 +21,7 @@ const newsData = [
         date: "Jan 10, 2024"
     },
     {
-        imageSrc: "https://placehold.co/600x400.png",
+        imageSrc: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxvbmxpbmUlMjBjbGFzc3xlbnwwfHx8fDE3NTI3NzY0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
         imageAlt: "A person taking an online class on a laptop.",
         imageHint: "online class",
         title: "Online Classes Now Available",
