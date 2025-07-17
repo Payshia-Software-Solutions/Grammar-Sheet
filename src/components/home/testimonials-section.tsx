@@ -1,10 +1,8 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
 import Link from "next/link";
+import { CommentCard, type CommentCardProps } from "./comment-card";
 
-const testimonials = [
+const testimonials: CommentCardProps[] = [
     {
         name: "Amaya Perera",
         role: "Grade 10 Student",
@@ -34,28 +32,7 @@ export function TestimonialsSection() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
                     {testimonials.map((testimonial, index) => (
-                        <Card key={index} className="bg-white shadow-lg rounded-xl p-6">
-                            <CardContent className="flex flex-col gap-4 p-0">
-                                <div className="flex items-center gap-4">
-                                    <Avatar>
-                                        <AvatarImage src={testimonial.avatarSrc} alt={testimonial.name} data-ai-hint={testimonial.avatarHint} />
-                                        <AvatarFallback>{testimonial.avatarFallback}</AvatarFallback>
-                                    </Avatar>
-                                    <div>
-                                        <p className="font-semibold text-foreground">{testimonial.name}</p>
-                                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                                    </div>
-                                </div>
-                                <div className="flex gap-1">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star key={i} className="w-5 h-5 text-orange-400 fill-orange-400" />
-                                    ))}
-                                </div>
-                                <blockquote className="text-muted-foreground italic">
-                                    "{testimonial.quote}"
-                                </blockquote>
-                            </CardContent>
-                        </Card>
+                        <CommentCard key={index} {...testimonial} />
                     ))}
                 </div>
                 <div className="text-center">
