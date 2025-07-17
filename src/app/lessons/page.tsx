@@ -1,6 +1,7 @@
 import { HeroHeaderSection } from "@/components/layout/hero-header-section";
 import { ChooseYourGradeSection } from "@/components/lessons/choose-your-grade-section";
 import { ClassDetailsSection } from "@/components/lessons/class-details-section";
+import { StudentAchievementsSection } from "@/components/lessons/student-achievements-section";
 import { WhyChooseClassesSection } from "@/components/lessons/why-choose-classes-section";
 
 export default function LessonsPage() {
@@ -15,6 +16,7 @@ export default function LessonsPage() {
       <ChooseYourGradeSection />
       <ClassDetailsSection />
       <WhyChooseClassesSection />
+      <StudentAchievementsSection />
     </div>
   );
 }
