@@ -1,3 +1,6 @@
+"use client"
+
+import { motion } from "framer-motion";
 import { HeroHeaderSection } from "@/components/layout/hero-header-section";
 import { TeacherProfile } from "@/components/about/teacher-profile";
 import { TeachingApproach } from "@/components/about/teaching-approach";
@@ -6,6 +9,11 @@ import { RootedInLearning } from "@/components/about/rooted-in-learning";
 import { AboutCtaSection } from "@/components/about/about-cta-section";
 
 export default function AboutPage() {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
   return (
     <div>
       <HeroHeaderSection
@@ -14,13 +22,48 @@ export default function AboutPage() {
         imageUrl="https://placehold.co/1920x600.png"
         imageHint="students classroom"
       />
-      <div className="container mx-auto py-16 md:py-24 px-4 md:px-6">
-        <TeacherProfile />
-      </div>
-      <TeachingApproach />
-      <WhyItWorks />
-      <RootedInLearning />
-      <AboutCtaSection />
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
+        <div className="container mx-auto py-16 md:py-24 px-4 md:px-6">
+          <TeacherProfile />
+        </div>
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
+        <TeachingApproach />
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
+        <WhyItWorks />
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
+        <RootedInLearning />
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
+        <AboutCtaSection />
+      </motion.div>
     </div>
   );
 }
