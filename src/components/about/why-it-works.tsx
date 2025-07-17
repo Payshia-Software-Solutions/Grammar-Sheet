@@ -1,6 +1,15 @@
+"use client"
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const stats = [
   {
@@ -40,6 +49,14 @@ const testimonials = [
     avatarFallback: "NS",
     avatarHint: "student girl",
   },
+  {
+    quote: "The focused grammar drills were incredibly helpful for my O/L exams. I felt so much more confident.",
+    name: "Fathima Rizvi",
+    grade: "Grade 11",
+    avatarSrc: "https://placehold.co/48x48.png",
+    avatarFallback: "FR",
+    avatarHint: "student girl",
+  },
 ];
 
 export function WhyItWorks() {
@@ -64,31 +81,47 @@ export function WhyItWorks() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.name} className="bg-secondary/50 border-none shadow-lg rounded-2xl">
-              <CardContent className="p-8 space-y-4">
-                <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                    ))}
-                </div>
-                <blockquote className="text-muted-foreground italic text-base">
-                  &quot;{testimonial.quote}&quot;
-                </blockquote>
-                <div className="flex items-center gap-4 pt-2">
-                    <Avatar className="h-12 w-12">
-                        <AvatarImage src={testimonial.avatarSrc} alt={testimonial.name} data-ai-hint={testimonial.avatarHint}/>
-                        <AvatarFallback>{testimonial.avatarFallback}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                        <p className="font-semibold text-foreground">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.grade}</p>
-                    </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="max-w-xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    <Card className="bg-secondary/50 border-none shadow-lg rounded-2xl">
+                      <CardContent className="p-8 space-y-4">
+                        <div className="flex">
+                            {[...Array(5)].map((_, i) => (
+                                <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                            ))}
+                        </div>
+                        <blockquote className="text-muted-foreground italic text-base min-h-[72px]">
+                          &quot;{testimonial.quote}&quot;
+                        </blockquote>
+                        <div className="flex items-center gap-4 pt-2">
+                            <Avatar className="h-12 w-12">
+                                <AvatarImage src={testimonial.avatarSrc} alt={testimonial.name} data-ai-hint={testimonial.avatarHint}/>
+                                <AvatarFallback>{testimonial.avatarFallback}</AvatarFallback>
+                            </Avatar>
+                            <div>
+                                <p className="font-semibold text-foreground">{testimonial.name}</p>
+                                <p className="text-sm text-muted-foreground">{testimonial.grade}</p>
+                            </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </div>
     </section>
