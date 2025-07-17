@@ -1,6 +1,7 @@
 import { HeroHeaderSection } from "@/components/layout/hero-header-section";
 import { FeaturedNews } from "@/components/news/featured-news";
 import { NewsList } from "@/components/news/news-list";
+import { StayUpdatedSection } from "@/components/news/stay-updated-section";
 
 export default function NewsPage() {
   return (
@@ -13,6 +14,7 @@ export default function NewsPage() {
       />
       <FeaturedNews />
       <NewsList />
+      <StayUpdatedSection />
     </div>
   );
 }
