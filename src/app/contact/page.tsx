@@ -3,6 +3,7 @@ import ContactForm from "./contact-form";
 import { TeacherProfile } from "@/components/about/teacher-profile";
 import { TeachingApproach } from "@/components/about/teaching-approach";
 import { WhyItWorks } from "@/components/about/why-it-works";
+import { RootedInLearning } from "@/components/about/rooted-in-learning";
 
 export default function AboutPage() {
   return (
@@ -18,6 +19,7 @@ export default function AboutPage() {
       </div>
       <TeachingApproach />
       <WhyItWorks />
+      <RootedInLearning />
       <div className="container mx-auto py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-6 text-center">
