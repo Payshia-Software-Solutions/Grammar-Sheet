@@ -1,5 +1,6 @@
 "use client"
 
+import * as React from "react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
@@ -7,9 +8,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 
 const stats = [
   {
@@ -57,9 +57,21 @@ const testimonials = [
     avatarFallback: "FR",
     avatarHint: "student girl",
   },
+    {
+    quote: "A fantastic teacher who is patient and supportive. My son's English has improved beyond my expectations.",
+    name: "Suresh Gamage",
+    grade: "Parent of Grade 8 Student",
+    avatarSrc: "https://placehold.co/48x48.png",
+    avatarFallback: "SG",
+    avatarHint: "parent man",
+  },
 ];
 
 export function WhyItWorks() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  )
+
   return (
     <section className="w-full py-16 md:py-24 bg-background">
       <div className="container px-4 md:px-6 mx-auto">
@@ -81,26 +93,29 @@ export function WhyItWorks() {
           ))}
         </div>
 
-        <div className="max-w-xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <Carousel
+            plugins={[plugin.current]}
             opts={{
               align: "start",
               loop: true,
             }}
             className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
           >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <Card className="bg-secondary/50 border-none shadow-lg rounded-2xl">
-                      <CardContent className="p-8 space-y-4">
+                <CarouselItem key={index} className="md:basis-1/2">
+                  <div className="p-2">
+                    <Card className="bg-secondary/50 border-none shadow-lg rounded-2xl h-full">
+                      <CardContent className="p-8 space-y-4 flex flex-col h-full">
                         <div className="flex">
                             {[...Array(5)].map((_, i) => (
                                 <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                             ))}
                         </div>
-                        <blockquote className="text-muted-foreground italic text-base min-h-[72px]">
+                        <blockquote className="text-muted-foreground italic text-base min-h-[72px] flex-grow">
                           &quot;{testimonial.quote}&quot;
                         </blockquote>
                         <div className="flex items-center gap-4 pt-2">
@@ -119,8 +134,6 @@ export function WhyItWorks() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
           </Carousel>
         </div>
       </div>
