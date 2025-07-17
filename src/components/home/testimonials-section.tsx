@@ -37,7 +37,7 @@ export function TestimonialsSection() {
                 </div>
                 <div className="text-center">
                     <Button asChild size="lg" className="bg-green-200 hover:bg-green-300 text-green-800 rounded-full px-8">
-                        <Link href="/quizzes">Read All Reviews</Link>
+                        <Link href="/reviews">Read All Reviews</Link>
                     </Button>
                 </div>
             </div>
