@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "../theme-toggle";
+import { LanguageToggle } from "./language-toggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -49,6 +50,7 @@ export function Header() {
               <NavLink key={link.href+link.label} {...link} />
             ))}
           </nav>
+          <LanguageToggle />
           <ThemeToggle />
           <div className="flex items-center justify-end md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
