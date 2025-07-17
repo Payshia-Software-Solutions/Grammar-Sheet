@@ -32,7 +32,7 @@ const newsData = [
 
 export function NewsSection() {
     return (
-        <section className="w-full py-16 md:py-24 bg-background" id="news">
+        <section className="w-full py-16 md:py-24 bg-gray-50" id="news">
             <div className="container px-4 md:px-6 mx-auto">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                     <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">
