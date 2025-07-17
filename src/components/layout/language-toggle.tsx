@@ -11,8 +11,29 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-export function LanguageToggle() {
+type LanguageContextType = {
+  language: string;
+  setLanguage: (language: string) => void;
+};
+
+export const LanguageContext = React.createContext<LanguageContextType>({
+  language: "en",
+  setLanguage: () => {},
+});
+
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = React.useState("en");
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  )
+}
+
+export function LanguageToggle() {
+  const { setLanguage } = React.useContext(LanguageContext)
 
   return (
     <DropdownMenu>

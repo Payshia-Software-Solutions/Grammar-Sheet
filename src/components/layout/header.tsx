@@ -2,28 +2,56 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { FileText, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "../theme-toggle";
-import { LanguageToggle } from "./language-toggle";
+import { LanguageToggle, LanguageContext } from "./language-toggle";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/lessons", label: "Classes" },
-  { href: "/reviews", label: "Reviews" },
-  { href: "/news", label: "News" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Home", siLabel: "මුල් පිටුව" },
+  { href: "/about", label: "About", siLabel: "අප ගැන" },
+  { href: "/lessons", label: "Classes", siLabel: "පන්ති" },
+  { href: "/reviews", label: "Reviews", siLabel: "විචාර" },
+  { href: "/news", label: "News", siLabel: "පුවත්" },
+  { href: "/contact", label: "Contact", siLabel: "සම්බන්ධ වන්න" },
 ];
 
 export function Header() {
+  const { language } = useContext(LanguageContext);
+
+  const NavLinks = () => (
+    <>
+      {navLinks.map((link) => (
+        <NavLink 
+          key={link.href} 
+          href={link.href} 
+          label={language === 'si' ? link.siLabel : link.label} 
+        />
+      ))}
+    </>
+  );
+
+  const MobileNavLinks = () => (
+     <>
+      {navLinks.map((link) => (
+        <NavLink 
+          key={link.href} 
+          href={link.href} 
+          label={language === 'si' ? link.siLabel : link.label}
+          className="text-lg"
+          isMobile={true}
+        />
+      ))}
+    </>
+  )
+
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const NavLink = ({ href, label, className }: { href: string; label: string, className?: string }) => (
+  const NavLink = ({ href, label, className, isMobile = false }: { href: string; label: string, className?: string, isMobile?: boolean }) => (
     <Link
       href={href}
       className={cn(
@@ -31,7 +59,7 @@ export function Header() {
         pathname === href ? "text-primary font-semibold" : "text-muted-foreground",
         className
       )}
-      onClick={() => setIsMobileMenuOpen(false)}
+      onClick={() => isMobile && setIsMobileMenuOpen(false)}
     >
       {label}
     </Link>
@@ -46,9 +74,7 @@ export function Header() {
         </Link>
         <div className="flex items-center gap-2">
           <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-            {navLinks.map((link) => (
-              <NavLink key={link.href+link.label} {...link} />
-            ))}
+            <NavLinks />
           </nav>
           <LanguageToggle />
           <ThemeToggle />
@@ -62,14 +88,12 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="left">
                 <div className="flex flex-col gap-6 pt-6">
-                  <Link href="/" className="flex items-center space-x-2 px-4">
+                  <Link href="/" className="flex items-center space-x-2 px-4" onClick={() => setIsMobileMenuOpen(false)}>
                       <FileText className="h-8 w-8 text-primary" />
                       <span className="text-xl font-bold font-headline text-foreground">Grammar Sheet</span>
                   </Link>
                   <div className="flex flex-col gap-4 px-4">
-                    {navLinks.map((link) => (
-                        <NavLink key={link.href+link.label} {...link} className="text-lg"/>
-                    ))}
+                    <MobileNavLinks />
                   </div>
                 </div>
               </SheetContent>

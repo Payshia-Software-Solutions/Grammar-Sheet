@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from '@/components/theme-provider';
+import { LanguageProvider } from '@/components/layout/language-toggle';
 
 export const metadata: Metadata = {
   title: 'Grammar Sheet',
@@ -23,6 +24,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased flex flex-col min-h-screen">
+        <LanguageProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -34,6 +36,7 @@ export default function RootLayout({
             <Footer />
             <Toaster />
           </ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );
