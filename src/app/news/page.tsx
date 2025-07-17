@@ -1,4 +1,5 @@
 import { HeroHeaderSection } from "@/components/layout/hero-header-section";
+import { FeaturedNews } from "@/components/news/featured-news";
 
 export default function NewsPage() {
   return (
@@ -9,6 +10,7 @@ export default function NewsPage() {
         imageUrl="https://placehold.co/1920x600.png"
         imageHint="students teachers group photo"
       />
+      <FeaturedNews />
     </div>
   );
 }
