@@ -12,8 +12,8 @@ const testimonials = [
     avatarSrc: "https://placehold.co/48x48.png",
     avatarFallback: "SK",
     avatarHint: "student girl",
-    bgColor: "bg-blue-50",
-    badgeColor: "bg-blue-100 text-blue-800",
+    bgColor: "bg-blue-50 dark:bg-blue-900/20",
+    badgeColor: "bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300",
   },
   {
     quote: "Our son gained incredible confidence in public speaking and writing. His presentation skills are now exceptional!",
@@ -23,8 +23,8 @@ const testimonials = [
     avatarSrc: "",
     avatarFallback: "C",
     avatarHint: "parents",
-    bgColor: "bg-green-50",
-    badgeColor: "bg-green-100 text-green-800",
+    bgColor: "bg-green-50 dark:bg-green-900/20",
+    badgeColor: "bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300",
   },
   {
     quote: "Achieved Band 8.0 in IELTS! The structured approach and practice materials were incredibly effective.",
@@ -34,14 +34,14 @@ const testimonials = [
     avatarSrc: "",
     avatarFallback: "MR",
     avatarHint: "student boy",
-    bgColor: "bg-yellow-50",
-    badgeColor: "bg-yellow-100 text-yellow-800",
+    bgColor: "bg-yellow-50 dark:bg-yellow-900/20",
+    badgeColor: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300",
   },
 ];
 
 export function TopSuccessStories() {
   return (
-    <section className="w-full py-16 md:py-24 bg-gray-50">
+    <section className="w-full py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">
