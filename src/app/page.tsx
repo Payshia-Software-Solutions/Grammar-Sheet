@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 import { BookOpen, Target, FileQuestion } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { ClassesSection } from "@/components/home/classes-section";
 
 export default function Home() {
   return (
@@ -65,6 +66,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ClassesSection />
 
       <section className="w-full py-16 md:py-24">
         <div className="container px-4 md:px-6 mx-auto">
