@@ -14,7 +14,7 @@ export type CommentCardProps = {
 
 export function CommentCard({ name, role, avatarSrc, avatarFallback, avatarHint, quote }: CommentCardProps) {
     return (
-        <Card className="bg-white shadow-lg rounded-xl p-6 h-full">
+        <Card className="bg-card shadow-lg rounded-xl p-6 h-full">
             <CardContent className="flex flex-col gap-4 p-0 h-full">
                 <div className="flex items-center gap-4">
                     <Avatar className="h-12 w-12">
