@@ -3,15 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { PenSquare, Menu, X } from "lucide-react";
+import { FileText, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/lessons", label: "Lessons" },
-  { href: "/quizzes", label: "Quizzes" },
+  { href: "/contact", label: "About" },
+  { href: "/lessons", label: "Classes" },
+  { href: "/quizzes", label: "Reviews" },
+  { href: "/#news", label: "News" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -34,17 +36,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center mx-auto px-4 md:px-6">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
-          <PenSquare className="h-6 w-6 text-primary" />
-          <span className="font-bold font-headline sm:inline-block">GrammarWise</span>
+      <div className="container flex h-16 items-center mx-auto px-4 md:px-6 justify-between">
+        <Link href="/" className="flex items-center space-x-2">
+          <FileText className="h-8 w-8 text-primary" />
+          <span className="text-xl font-bold font-headline sm:inline-block text-foreground">Grammar Sheet</span>
         </Link>
-        <nav className="hidden flex-1 items-center gap-6 text-sm font-medium md:flex">
+        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
           {navLinks.map((link) => (
-            <NavLink key={link.href} {...link} />
+            <NavLink key={link.href+link.label} {...link} />
           ))}
         </nav>
-        <div className="flex flex-1 items-center justify-end md:hidden">
+        <div className="flex items-center justify-end md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -54,13 +56,15 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <div className="flex flex-col gap-6 pt-6">
-                <Link href="/" className="mr-6 flex items-center space-x-2">
-                    <PenSquare className="h-6 w-6 text-primary" />
-                    <span className="font-bold font-headline">GrammarWise</span>
+                <Link href="/" className="flex items-center space-x-2 px-4">
+                    <FileText className="h-8 w-8 text-primary" />
+                    <span className="text-xl font-bold font-headline text-foreground">Grammar Sheet</span>
                 </Link>
-                {navLinks.map((link) => (
-                    <NavLink key={link.href} {...link} />
-                ))}
+                <div className="flex flex-col gap-4">
+                  {navLinks.map((link) => (
+                      <NavLink key={link.href+link.label} {...link} />
+                  ))}
+                </div>
               </div>
             </SheetContent>
           </Sheet>

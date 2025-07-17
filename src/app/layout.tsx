@@ -5,7 +5,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'GrammarWise',
+  title: 'Grammar Sheet',
   description: 'Your guide to mastering English grammar.',
 };
 
