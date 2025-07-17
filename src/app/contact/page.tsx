@@ -1,26 +1,34 @@
 import { HeroHeaderSection } from "@/components/layout/hero-header-section";
-import { TeacherProfile } from "@/components/about/teacher-profile";
-import { TeachingApproach } from "@/components/about/teaching-approach";
-import { WhyItWorks } from "@/components/about/why-it-works";
-import { RootedInLearning } from "@/components/about/rooted-in-learning";
-import { AboutCtaSection } from "@/components/about/about-cta-section";
+import { ContactCards } from "@/components/contact/contact-cards";
+import { ContactFormSection } from "@/components/contact/contact-form-section";
 
-export default function AboutPage() {
+export default function ContactPage() {
   return (
     <div>
-      <HeroHeaderSection
-        title="Meet Your English Guide"
-        subtitle="Passionate about helping every Sri Lankan student master English."
-        imageUrl="https://placehold.co/1920x600.png"
-        imageHint="students classroom"
-      />
-      <div className="container mx-auto py-16 md:py-24 px-4 md:px-6">
-        <TeacherProfile />
-      </div>
-      <TeachingApproach />
-      <WhyItWorks />
-      <RootedInLearning />
-      <AboutCtaSection />
+      <section className="relative w-full pt-20 pb-12 md:pt-32 md:pb-24 bg-gray-100">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('https://placehold.co/1920x800.png')" }}
+          data-ai-hint="teachers group photo"
+        >
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center text-white">
+          <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl">
+            Get in Touch
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-200">
+            We&apos;d love to hear from you. Contact us for class details, questions, or registration.
+          </p>
+        </div>
+      </section>
+
+      <section className="relative -mt-16 z-20">
+        <ContactCards />
+      </section>
+      
+      <ContactFormSection />
+
     </div>
   );
 }
