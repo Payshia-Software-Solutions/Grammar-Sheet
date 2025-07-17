@@ -3,7 +3,6 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 import { BookOpen, Target, FileQuestion } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { ClassesSection } from "@/components/home/classes-section";
 import { WhyChooseUsSection } from "@/components/home/why-choose-us";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { NewsSection } from "@/components/home/news-section";
@@ -70,8 +69,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <ClassesSection />
 
       <WhyChooseUsSection />
 
