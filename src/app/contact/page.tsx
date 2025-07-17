@@ -1,6 +1,7 @@
 import { HeroHeaderSection } from "@/components/layout/hero-header-section";
 import { ContactCards } from "@/components/contact/contact-cards";
 import { ContactFormSection } from "@/components/contact/contact-form-section";
+import { FaqSection } from "@/components/contact/faq-section";
 
 export default function ContactPage() {
   return (
@@ -28,6 +29,8 @@ export default function ContactPage() {
       </section>
       
       <ContactFormSection />
+
+      <FaqSection />
 
     </div>
   );
