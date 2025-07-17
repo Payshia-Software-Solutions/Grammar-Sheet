@@ -16,7 +16,7 @@ const testimonials: CommentCardProps[] = [
     {
         name: "Amaya Perera",
         role: "Grade 10 Student",
-        avatarSrc: "https://placehold.co/40x40.png",
+        avatarSrc: "https://images.unsplash.com/photo-1520466809213-7b9a56adcd45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdHVkZW50JTIwZ2lybHxlbnwwfHx8fDE3NTI3NzcxMTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
         avatarFallback: "AP",
         avatarHint: "student girl",
         quote: "Teacher's explanations are so clear and easy to understand. My English grades improved significantly!"
@@ -24,7 +24,7 @@ const testimonials: CommentCardProps[] = [
     {
         name: "Sunil Fernando",
         role: "Parent",
-        avatarSrc: "https://placehold.co/40x40.png",
+        avatarSrc: "https://images.unsplash.com/photo-1549231567-950cb741e796?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwYXJlbnQlMjBtYW58ZW58MHx8fHwxNzUyNzc3MTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
         avatarFallback: "SF",
         avatarHint: "parent man",
         quote: "Excellent teaching methods. My daughter loves attending classes and her confidence has grown tremendously."
@@ -32,7 +32,7 @@ const testimonials: CommentCardProps[] = [
     {
         name: "Nimali De Silva",
         role: "Grade 8 Student",
-        avatarSrc: "https://placehold.co/40x40.png",
+        avatarSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50JTIwZ2lybHxlbnwwfHx8fDE3NTI3NzcxMTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
         avatarFallback: "NDS",
         avatarHint: "student girl",
         quote: "The online classes are just as good as the physical ones. Very interactive and fun!"
@@ -40,7 +40,7 @@ const testimonials: CommentCardProps[] = [
     {
         name: "Mr. Bandara",
         role: "Parent",
-        avatarSrc: "https://placehold.co/40x40.png",
+        avatarSrc: "https://images.unsplash.com/photo-1549231634-8633391d04b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwYXJlbnQlMjBtYW58ZW58MHx8fHwxNzUyNzc3MTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
         avatarFallback: "B",
         avatarHint: "parent man",
         quote: "A very dedicated teacher. My son is no longer afraid of English grammar."
