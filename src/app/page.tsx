@@ -10,8 +10,36 @@ import { NewsSection } from "@/components/home/news-section";
 import { CtaSection } from "@/components/home/cta-section";
 import { ClassesSection } from "@/components/home/classes-section";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { LanguageContext } from "@/components/layout/language-toggle";
+
+const translations = {
+  en: {
+    heroTitle: "Master English with Confidence",
+    heroSubtitle1: "From Grade 6 to O/L",
+    heroSubtitle2: "Trusted English classes tailored for Sri Lankan students.",
+    joinClass: "Join a Class",
+    seeSchedule: "See Class Schedule",
+    aboutTeacherTitle: "About Your Teacher",
+    aboutTeacherDesc: "10+ years of experience in teaching English for O/L and Junior Grades. Passionate about helping Sri Lankan students excel in English with personalized attention and proven methods.",
+    learnMore: "Learn More"
+  },
+  si: {
+    heroTitle: "විශ්වාසයෙන් ඉංග්‍රීසි ප්‍රගුණ කරන්න",
+    heroSubtitle1: "6 ශ්‍රේණියේ සිට සා/පෙළ දක්වා",
+    heroSubtitle2: "ශ්‍රී ලාංකික සිසුන් සඳහාම සැකසූ විශ්වාසනීය ඉංග්‍රීසි පන්ති.",
+    joinClass: "පන්තියකට සහභාගී වන්න",
+    seeSchedule: "කාලසටහන බලන්න",
+    aboutTeacherTitle: "ඔබේ ගුරුවරයා ගැන",
+    aboutTeacherDesc: "සා/පෙළ සහ කනිෂ්ඨ ශ්‍රේණි සඳහා ඉංග්‍රීසි ඉගැන්වීමේ වසර 10+ ක පළපුරුද්ද. පුද්ගලික අවධානය සහ ඔප්පු කළ ක්‍රම සමඟින් ශ්‍රී ලාංකික සිසුන්ට ඉංග්‍රීසි භාෂාවෙන් විශිෂ්ට වීමට උපකාර කිරීමට දැඩි කැමැත්තක් දක්වයි.",
+    learnMore: "තවත් දැනගන්න"
+  }
+};
 
 export default function Home() {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language as keyof typeof translations] || translations.en;
+
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -37,20 +65,20 @@ export default function Home() {
             className="space-y-4 max-w-3xl mx-auto"
           >
             <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Master English with Confidence
+              {t.heroTitle}
             </h1>
             <p className="text-lg md:text-xl">
-              From Grade 6 to O/L
+              {t.heroSubtitle1}
             </p>
             <p className="max-w-[600px] mx-auto text-gray-200 md:text-lg">
-              Trusted English classes tailored for Sri Lankan students.
+              {t.heroSubtitle2}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button asChild size="lg" className="rounded-full">
-                <Link href="/lessons">Join a Class</Link>
+                <Link href="/lessons">{t.joinClass}</Link>
               </Button>
                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
-                <Link href="/contact">See Class Schedule</Link>
+                <Link href="/contact">{t.seeSchedule}</Link>
               </Button>
             </div>
           </motion.div>
@@ -78,12 +106,12 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-4 text-center md:text-left">
-                <h2 className="text-3xl font-headline font-bold">About Your Teacher</h2>
+                <h2 className="text-3xl font-headline font-bold">{t.aboutTeacherTitle}</h2>
                 <p className="text-muted-foreground">
-                  10+ years of experience in teaching English for O/L and Junior Grades. Passionate about helping Sri Lankan students excel in English with personalized attention and proven methods.
+                  {t.aboutTeacherDesc}
                 </p>
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full" size="lg">
-                  <Link href="/contact">Learn More</Link>
+                  <Link href="/contact">{t.learnMore}</Link>
                 </Button>
               </div>
             </div>
