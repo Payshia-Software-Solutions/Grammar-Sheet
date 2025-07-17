@@ -5,7 +5,7 @@ import { StayUpdatedSection } from "@/components/news/stay-updated-section";
 
 export default function NewsPage() {
   return (
-    <div className="bg-gray-50/50">
+    <div className="bg-background">
       <HeroHeaderSection
         title="News & Notices"
         subtitle="Stay updated with the latest announcements, class schedules, and exam tips."

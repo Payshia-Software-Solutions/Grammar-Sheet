@@ -14,28 +14,28 @@ const newsItems = [
         title: "5 Essential Grammar Rules for O/L English",
         date: "June 25, 2025",
         description: "Master these fundamental grammar concepts to excel in your O/L English examination. From subject-verb agreement to proper tense usage...",
-        color: "bg-green-100 text-green-800"
+        color: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300"
     },
     {
         category: "Notice",
         title: "Class Schedule Changes - Week of July 1st",
         date: "June 22, 2025",
         description: "Important updates to our regular class schedule due to public holidays. All Grade 9 and 10 classes will be rescheduled...",
-        color: "bg-red-100 text-red-800"
+        color: "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300"
     },
     {
         category: "Events",
         title: "Free Trial Classes Available This Week",
         date: "June 20, 2025",
         description: "Experience our teaching methodology with free trial classes for new students. Available for all grades with limited slots...",
-        color: "bg-purple-100 text-purple-800"
+        color: "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300"
     },
     {
         category: "Tips",
         title: "How to Improve Your Essay Writing Skills",
         date: "June 18, 2025",
         description: "Learn effective techniques to structure your essays and improve your writing style for better marks in examinations...",
-        color: "bg-cyan-100 text-cyan-800"
+        color: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300"
     }
 ];
 
@@ -47,9 +47,9 @@ const quickTips = [
 ];
 
 const upcomingEvents = [
-    { name: "Trial Class", date: "July 10", color: "bg-blue-50 hover:bg-blue-100" },
-    { name: "Term End Test", date: "August 5", color: "bg-orange-50 hover:bg-orange-100" },
-    { name: "Holiday Break", date: "Aug 15-22", color: "bg-green-50 hover:bg-green-100" }
+    { name: "Trial Class", date: "July 10", color: "bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/30 dark:hover:bg-blue-900/50" },
+    { name: "Term End Test", date: "August 5", color: "bg-orange-50 hover:bg-orange-100 dark:bg-orange-900/30 dark:hover:bg-orange-900/50" },
+    { name: "Holiday Break", date: "Aug 15-22", color: "bg-green-50 hover:bg-green-100 dark:bg-green-900/30 dark:hover:bg-green-900/50" }
 ];
 
 const filters = ["All", "Notices", "Tips", "Events", "Schedule"];
@@ -61,7 +61,7 @@ export function NewsList() {
         <section className="w-full py-16 md:py-24">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex justify-center mb-12">
-                    <div className="flex flex-wrap gap-2 bg-white p-2 rounded-full shadow-sm">
+                    <div className="flex flex-wrap gap-2 bg-card p-2 rounded-full shadow-sm">
                         {filters.map(filter => (
                             <Button
                                 key={filter}
@@ -82,7 +82,7 @@ export function NewsList() {
                     {/* News Articles */}
                     <div className="lg:col-span-2 space-y-8">
                         {newsItems.map(item => (
-                            <Card key={item.title} className="bg-white shadow-md hover:shadow-lg transition-shadow rounded-2xl overflow-hidden">
+                            <Card key={item.title} className="bg-card shadow-md hover:shadow-lg transition-shadow rounded-2xl overflow-hidden">
                                 <CardContent className="p-8">
                                     <div className="flex justify-between items-start mb-4">
                                         <Badge variant="outline" className={`font-semibold border-none ${item.color}`}>
@@ -104,7 +104,7 @@ export function NewsList() {
                     {/* Sidebar */}
                     <div className="space-y-8">
                         {/* Quick Tips */}
-                        <Card className="bg-white shadow-md rounded-2xl">
+                        <Card className="bg-card shadow-md rounded-2xl">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-3 font-headline">
                                     <Lightbulb className="w-6 h-6 text-yellow-500" />
@@ -124,7 +124,7 @@ export function NewsList() {
                         </Card>
 
                         {/* Upcoming Events */}
-                        <Card className="bg-white shadow-md rounded-2xl">
+                        <Card className="bg-card shadow-md rounded-2xl">
                              <CardHeader>
                                 <CardTitle className="flex items-center gap-3 font-headline">
                                     <Calendar className="w-6 h-6 text-blue-500" />
