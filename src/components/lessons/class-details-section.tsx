@@ -34,9 +34,9 @@ const scheduleDetails = [
 
 export function ClassDetailsSection() {
   return (
-    <section className="w-full py-16 md:py-24 bg-secondary">
+    <section className="w-full py-16 md:py-24 bg-background">
       <div className="container px-4 md:px-6 mx-auto">
-        <Card className="max-w-4xl mx-auto shadow-xl rounded-2xl bg-card">
+        <Card className="max-w-4xl mx-auto shadow-xl rounded-2xl bg-secondary">
           <CardContent className="p-8 md:p-12">
             <h2 className="text-2xl md:text-3xl font-bold font-headline mb-8 text-center">
               Grade 10 - O/L Mastery (Sample Detail)
