@@ -10,7 +10,11 @@ export function ContactFormSection() {
                         <h2 className="text-3xl font-headline font-bold">Send us a Message</h2>
                         <p className="text-muted-foreground mt-2">Fill out the form below and we'll get back to you soon</p>
                     </div>
-                    <ContactForm />
+                    <Card className="p-8 shadow-lg">
+                        <CardContent className="p-0">
+                           <ContactForm />
+                        </CardContent>
+                    </Card>
                 </div>
             </div>
         </section>
