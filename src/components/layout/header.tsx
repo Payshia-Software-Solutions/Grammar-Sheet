@@ -7,6 +7,7 @@ import { FileText, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "../theme-toggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -42,33 +43,36 @@ export function Header() {
           <FileText className="h-8 w-8 text-green-600" />
           <span className="text-xl font-bold font-headline sm:inline-block text-foreground">Grammar Sheet</span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-          {navLinks.map((link) => (
-            <NavLink key={link.href+link.label} {...link} />
-          ))}
-        </nav>
-        <div className="flex items-center justify-end md:hidden">
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left">
-              <div className="flex flex-col gap-6 pt-6">
-                <Link href="/" className="flex items-center space-x-2 px-4">
-                    <FileText className="h-8 w-8 text-green-600" />
-                    <span className="text-xl font-bold font-headline text-foreground">Grammar Sheet</span>
-                </Link>
-                <div className="flex flex-col gap-4 px-4">
-                  {navLinks.map((link) => (
-                      <NavLink key={link.href+link.label} {...link} className="text-lg"/>
-                  ))}
+        <div className="flex items-center gap-2">
+          <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+            {navLinks.map((link) => (
+              <NavLink key={link.href+link.label} {...link} />
+            ))}
+          </nav>
+          <ThemeToggle />
+          <div className="flex items-center justify-end md:hidden">
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle Menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left">
+                <div className="flex flex-col gap-6 pt-6">
+                  <Link href="/" className="flex items-center space-x-2 px-4">
+                      <FileText className="h-8 w-8 text-green-600" />
+                      <span className="text-xl font-bold font-headline text-foreground">Grammar Sheet</span>
+                  </Link>
+                  <div className="flex flex-col gap-4 px-4">
+                    {navLinks.map((link) => (
+                        <NavLink key={link.href+link.label} {...link} className="text-lg"/>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
